@@ -27,6 +27,6 @@ app.get("/users", checkNameQueryParam, teste1.getUsers);
 app.post("/users", checkBody, teste2.createUser)
 app.delete("/users", verifyToken, checkNameQueryParam, teste3.deleteUser)
 app.put("/users", verifyToken, checkIdQueryParam, checkBody, teste4.updateUserById)
-app.get("/users/access", checkNameQueryParam, teste5);
+app.get("/users/access", checkNameQueryParam, teste5.getUserAccessCount);
 
 module.exports = app;

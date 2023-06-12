@@ -1,11 +1,11 @@
-var data =  require("./fakeData");
+const data =  require("./fakeData");
 
 module.exports = function(req, res){
   
-    var name =  req.body.name;
-    var jov =  req.body.job;
+    const name =  req.body.name;
+    const job =  req.body.job;
     
-    var newUser = {
+    const newUser = {
         name: name,
         job: job,
     }

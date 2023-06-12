@@ -10,7 +10,6 @@ const teste5 = require("./controllers/teste5");
 
 const verifyToken = require('./middlewares/verifyToken');
 
-
 app.set('view engine', 'jade');
 
 app.use(express.json());

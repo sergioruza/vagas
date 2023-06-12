@@ -1,4 +1,5 @@
 const data = require("./fakeData");
+const fs = require('fs');
 
 const getUser = (req, res) => {
     const { name } = req.query;

@@ -1,7 +1,7 @@
-const readFile = require('./utils/readFile');
+const readFile = require('../utils/readFile');
+const writeFile = require('../utils/writeFile');
 
 const data = readFile('./fakeData.json');
-const writeFile = require('./utils/writeFile');
 const getUser = (req, res) => {
     const { name } = req.query;
     const findByName = data.find((e) => e.name.toLowerCase() === name.toLowerCase());

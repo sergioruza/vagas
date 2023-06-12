@@ -1,5 +1,6 @@
-const readFile = require('./utils/readFile');
-const writeFile = require('./utils/writeFile');
+const readFile = require('../utils/readFile');
+const writeFile = require('../utils/writeFile');
+
 const data = readFile('./fakeData.json');
 
 const createUser = (req, res) => {

@@ -2,11 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-const teste1 = require("./teste1");
-const teste2 = require("./teste2");
-const teste3 = require("./teste3");
-const teste4 = require("./teste4");
-const teste5 = require("./teste5");
+const teste1 = require("./controllers/teste1");
+const teste2 = require("./controllers/teste2");
+const teste3 = require("./controllers/teste3");
+const teste4 = require("./controllers/teste4");
+const teste5 = require("./controllers/teste5");
 
 const verifyToken = require('./middlewares/verifyToken');
 

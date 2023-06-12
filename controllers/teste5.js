@@ -1,4 +1,4 @@
-const readFile = require('./utils/readFile');
+const readFile = require('../utils/readFile');
 const data = readFile('./fakeData.json');
 
 module.exports = function(req, res){

@@ -1,9 +1,11 @@
-
+const readFile = require('./utils/readFile');
+const data = readFile('./fakeData.json');
 
 module.exports = function(req, res){
-    
-    var name =  req.query.name;
+    const { name } = req.query;
 
-    res.send("Usuário " +  name  + "  foi lido 0 vezes.");
+    const userByName = data.find((user) => user.name === name);
+    const access = !userByName.counter ? 0 : userByName.counter;
 
+    return res.status(200).json({ message: `Usuário ${name} foi lido ${access} vezes.` });
 };

@@ -1,9 +1,8 @@
 const data = require("./fakeData");
 
 const getUser = (req, res) => {
-    const name = req.query.name;
-
-    const findByName = data.find((e) => e.name === name);
+    const { name } = req.query;
+    const findByName = data.find((e) => e.name.toLowerCase() === name.toLowerCase());
 
     if (!findByName) {
         return res.status(404).json({ message: 'Sorry, the requested record was not found.' });

@@ -8,6 +8,8 @@ var teste3 = require("./teste3");
 var teste4 = require("./teste4");
 var teste5 = require("./teste5");
 
+const verifyToken = require('./middlewares/verifyToken');
+
 
 app.set('view engine', 'jade');
 
@@ -31,8 +33,8 @@ app.get('/', function(req, res){
 app.get("/user", teste1.getUser);
 app.get("/users", teste1.getUsers);
 app.post("/users", teste2.createUser)
-app.delete("/users", teste3.deleteUser)
-app.put("/users", teste4.updateUserById)
+app.delete("/users", verifyToken, teste3.deleteUser)
+app.put("/users", verifyToken, teste4.updateUserById)
 app.get("/users/access", teste5);
 
 

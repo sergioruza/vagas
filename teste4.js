@@ -1,4 +1,6 @@
-const data = require("./fakeData");
+const readFile = require('./utils/readFile');
+const writeFile = require('./utils/writeFile');
+const data = readFile('./fakeData.json');
 
 updateUserById = (req, res) => {
     const { id } =  req.query;
@@ -16,6 +18,7 @@ updateUserById = (req, res) => {
     };
 
     data[index] = modifiedUser;
+    writeFile('./fakeData.json', data);
 
     return res.status(200).json(modifiedUser);
 };

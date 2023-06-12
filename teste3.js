@@ -1,15 +1,14 @@
-const data =  require("./fakeData");
+let data =  require("./fakeData");
 
 module.exports = function(req, res) {
-  
-    const name =  req.query.name;
-
-    for(let i = 0; i < data.length;  i++) {
-        if(i.name == name) {
-            data[i] = null;
-        }
+    const { name } =  req.query;
+    const updatedUsers = data.filter((user) => user.name !== name);
+    
+    if (updatedUsers.length === data.length) {
+        return res.status(500).json({ message: 'An error occurred while deleting the user.' });
     }
 
-    res.send("success");
+    data = updatedUsers;
 
+    return res.status(200).json({message: updatedUsers});
 };

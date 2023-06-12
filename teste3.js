@@ -1,6 +1,6 @@
 let data =  require("./fakeData");
 
-module.exports = function(req, res) {
+const deleteUser = (req, res) => {
     const { name } =  req.query;
     const updatedUsers = data.filter((user) => user.name !== name);
     
@@ -11,4 +11,8 @@ module.exports = function(req, res) {
     data = updatedUsers;
 
     return res.status(200).json({message: updatedUsers});
+};
+
+module.exports = {
+    deleteUser,
 };

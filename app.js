@@ -9,6 +9,8 @@ const teste4 = require("./controllers/teste4");
 const teste5 = require("./controllers/teste5");
 
 const verifyToken = require('./middlewares/verifyToken');
+const { checkNameQueryParam, checkIdQueryParam } = require('./middlewares/checkQuery');
+const checkBody = require('./middlewares/checkBody');
 
 app.set('view engine', 'jade');
 
@@ -20,11 +22,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/public'));
 
-app.get("/user", teste1.getUser);
-app.get("/users", teste1.getUsers);
-app.post("/users", teste2.createUser)
-app.delete("/users", verifyToken, teste3.deleteUser)
-app.put("/users", verifyToken, teste4.updateUserById)
-app.get("/users/access", teste5);
+app.get("/user", checkNameQuery, teste1.getUser);
+app.get("/users", checkNameQuery, teste1.getUsers);
+app.post("/users", checkBody, teste2.createUser)
+app.delete("/users", verifyToken, checkNameQueryParam, teste3.deleteUser)
+app.put("/users", verifyToken, checkIdQueryParam, checkBody, teste4.updateUserById)
+app.get("/users/access", checkNameQueryParam, teste5);
 
 module.exports = app;

@@ -24,5 +24,5 @@ updateUserById = (req, res) => {
 };
 
 module.exports = {
-    updateUserById,
+    updateUserById
 };

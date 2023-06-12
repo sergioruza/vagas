@@ -1,5 +1,6 @@
-const data = require("./fakeData");
-const fs = require('fs');
+const readFile = require('./utils/readFile');
+
+const data = readFile('./fakeData.json');
 
 const getUser = (req, res) => {
     const { name } = req.query;
@@ -8,7 +9,6 @@ const getUser = (req, res) => {
     if (!findByName) {
         return res.status(404).json({ message: 'Sorry, the requested record was not found.' });
     }
-    
     return res.status(200).json(findByName);
 };
 

@@ -1,4 +1,6 @@
-const data =  require("./fakeData");
+const readFile = require('./utils/readFile');
+const writeFile = require('./utils/writeFile');
+const data = readFile('./fakeData.json');
 
 const createUser = (req, res) => {
     const {name, job} =  req.body;
@@ -9,8 +11,9 @@ const createUser = (req, res) => {
     }
 
     data.push(newUser);
-    
-    return res.status(201).json(newUser);
+    writeFile('./fakeData.json', data);
+
+    return res.status(201).json(data);
 };
 
 module.exports = {

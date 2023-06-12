@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/public'));
 
-app.get("/user", checkNameQuery, teste1.getUser);
-app.get("/users", checkNameQuery, teste1.getUsers);
+app.get("/user", checkNameQueryParam, teste1.getUser);
+app.get("/users", checkNameQueryParam, teste1.getUsers);
 app.post("/users", checkBody, teste2.createUser)
 app.delete("/users", verifyToken, checkNameQueryParam, teste3.deleteUser)
 app.put("/users", verifyToken, checkIdQueryParam, checkBody, teste4.updateUserById)

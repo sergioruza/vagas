@@ -32,7 +32,7 @@ app.get("/user", teste1.getUser);
 app.get("/users", teste1.getUsers);
 app.post("/users", teste2.createUser)
 app.delete("/users", teste3.deleteUser)
-app.put("/users", teste4)
+app.put("/users", teste4.updateUserById)
 app.get("/users/access", teste5);
 
 

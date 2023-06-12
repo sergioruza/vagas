@@ -1,6 +1,6 @@
 const data = require("./fakeData");
 
-module.exports =  function(req, res) {
+updateUserById = (req, res) => {
     const { id } =  req.query;
     const { name, job } = req.body;
     const index = data.findIndex((user) => user.id == Number(id));
@@ -18,4 +18,8 @@ module.exports =  function(req, res) {
     data[index] = modifiedUser;
 
     return res.status(200).json(modifiedUser);
+};
+
+module.exports = {
+    updateUserById,
 };

@@ -5,11 +5,12 @@ const path = require('path');
 const assert = require('assert');
 
 const resetData = path.join(__dirname, 'fakeDataReset.json');
-const originalData = '/home/sergio/Documentos/vagas/fakeData.json'
+const originalData = '/home/sergio/Documentos/vagas/fakeData.json';
 
 const resetTestData = () => {
   fs.copyFileSync(resetData, originalData);
 };
+
 describe('Testing POST HTTP /users requests', () => {
   beforeEach(() => {
     resetTestData();
@@ -30,14 +31,14 @@ describe('Testing POST HTTP /users requests', () => {
       .send(user)
       .expect(201);
 
-    const { body } = response
+    const { body } = response;
     assert.strictEqual(response.status, 201);
     assert.strictEqual(body.id, 2);
     assert.strictEqual(body.name, 'John');
     assert.strictEqual(body.job, 'Desenvolvedor');
   });
 
-  it('It should return status 400 when it does not receive body "name" in the url', async () => {
+  it('Should return status 400 when it does not receive body "name" in the url', async () => {
     const user = {
       job: 'Desenvolvedor',
     };
@@ -53,7 +54,7 @@ describe('Testing POST HTTP /users requests', () => {
     assert.strictEqual(body.message, 'O parâmetro "name" é obrigatório.');
   });
 
-  it('It should return status 400 when it does not receive body "job" in the url', async () => {
+  it('Should return status 400 when it does not receive body "job" in the url', async () => {
     const user = {
       name: 'John',
     };

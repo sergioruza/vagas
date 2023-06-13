@@ -5,11 +5,12 @@ const path = require('path');
 const assert = require('assert');
 
 const resetData = path.join(__dirname, 'fakeDataReset.json');
-const originalData = '/home/sergio/Documentos/vagas/fakeData.json'
+const originalData = '/home/sergio/Documentos/vagas/fakeData.json';
 
 const resetTestData = () => {
   fs.copyFileSync(resetData, originalData);
 };
+
 describe('Testing HTTP /users/access requests', () => {
   beforeEach(() => {
     resetTestData();
@@ -31,11 +32,9 @@ describe('Testing HTTP /users/access requests', () => {
     assert.strictEqual(body.message, 'Usuário João Oliveira foi lido 0 vezes.');
   });
 
-  it('It should return status 400 when it does not receive query "name" in the url', async () => {
-    const name = 'João Oliveira';
-
+  it('Should return status 400 when it does not receive query "name" in the url', async () => {
     const response = await request(app)
-      .get('/users/access')
+      .get('/users/access');
 
     const { body } = response;
     assert.strictEqual(response.statusCode, 400);

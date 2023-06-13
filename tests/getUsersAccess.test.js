@@ -10,7 +10,7 @@ const originalData = '/home/sergio/Documentos/vagas/fakeData.json'
 const resetTestData = () => {
   fs.copyFileSync(resetData, originalData);
 };
-describe.only('Testing HTTP /users/access requests', () => {
+describe('Testing HTTP /users/access requests', () => {
   beforeEach(() => {
     resetTestData();
   });

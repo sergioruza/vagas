@@ -1,43 +1,69 @@
-# Este é um teste para desenvolvedores
+# <h1 align="center">💾 CRUD 💾</h1>
 
-# possui 5 testes
+## Inicialização
+Para executar o projeto, utilize as ferramentas descritas na sessão *Ferramentas*.
+
+## Ferramentas
+* Node - software de código aberto que permite a execução de códigos JavaScript fora de um navegador web.
+```bash
+
+# Faça o clone
+$ git clone git@github.com:sergioruza/vagas.git
+
+# Acesse a pasta
+$ cd vagas
+
+# Instale as dependências local
+$ npm install
+
+# Inicie o projeto
+$ npm run dev
+# [nodemon] starting `node .`
+# ouvindo porta 300?
+```
+# CRUD
 
 ## Introdução
 
-Este projeto possui um banco de dados fake em fakeData.js com apenas um registro.
-A ideia é melhorar e o CRUD escrito nos 4 arquivos de teste abaixo.
+Este projeto possui o objetivo principal de melhorar e corrigir bugs no código;
 
-Será a validada a forma de escrita de código.
-Escreva códigos que humanos consigam entender.
+### Descrição do ambiente técnico
 
-Fique a vontade para fazer modificaçoes nos serviços, comentários em código, estrutura, mas seja objetivo.
+O sistema é composto de Linguagem, frameworks e bibliotecas principais:  
+[![JavaScript][JavaScript]][JavaScript-url]
+[![Node.js-card][Node.js-card]][Node.js-url]
+[![EXPRESS][EXPRESS]][EXPRESS-url]
+[![Mocha][Mocha]][Mocha-url]
+[![jsonwebtokens][jsonwebtokens]][jsonwebtokens-url]
+[![nodemon][nodemon]][nodemon-url]
 
-## teste1.js
+### Requisitos Funcionais
+Respeitando a proposta, o sistema deverá atender os seguintes requisitos:
 
-GET em /user 
+* **RF1** - Realizar requests a um banco de dados simulado;
+* **RF2** - Rotas:   
+                   * GET /user?name=[nome]: Este endpoint permite realizar a busca no banco de dados para recuperar informações sobre uma pessoa específica; 
+                   * GET /users: Este endpoint realiza uma busca no banco de dados e retorna informações de todos os usuários cadastrados;  
+                   * POST /users: Utilize este endpoint para cadastrar ou criar um novo registro no banco de dados;  
+                   * DELETE /users?name=[nome]: Ao utilizar esse endpoint, é possível buscar um usuário pelo nome e removê-lo do banco de dados;  
+                   * PUT /users?id=[id]: Este endpoint permite buscar um usuário pelo ID e atualizar suas informações de acordo com o conteúdo fornecido no corpo da requisição;  
+                   * GET /users/access?name=[nome]: Com este endpoint, é possível buscar um usuário pelo ID e obter informações sobre quantas vezes o registro foi acessado;                    
 
-Possuimos neste arquivo um serviço que faz uma busca no banco fake e retorna um registro.
-Este código funciona, mas é possivel melhorar.
-Veja o que pode deixar ele melhor escrito e mais performatico.
 
-## teste2.js
+[JavaScript]: https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=node.js&logoColor=black
+[JavaScript-url]: https://www.javascript.com
 
-POST em /users, descubra a intenção dele e o corrija.
+[Node.js-card]: https://img.shields.io/badge/-Node.js-80BC02?style=for-the-badge&logo=node.js&logoColor=black
+[Node.js-url]: https://nodejs.org/en
 
-## teste3.js
+[Mocha]: https://img.shields.io/badge/MOCHA-6D4A31?style=for-the-badge&logo=mocha&logoColor=white
+[Mocha-url]: https://mochajs.org
 
-Este procura um usuário e o deleta da base.
-Retorne sucesso para o client caso realmente tenha sido excluido e deixe o código mais performatico.
+[EXPRESS]: https://img.shields.io/badge/Express-FFFFFF?style=for-the-badge&logo=express&logoColor=black
+[EXPRESS-url]: https://expressjs.com
 
-## teste4.js
+[jsonwebtokens]: https://img.shields.io/badge/-jsonwebtokens-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=black
+[jsonwebtokens-url]: https://jwt.io/
 
-Atualiza os dados de um usuário especifico.
-
-## teste5.js
-
-Retorne quantas vezes determinado usuário foi lido no teste1.
-
-## teste 6
-
-Definina uma forma de criar permissão para o usuario, defina se o usuário pode deletar ou atualizar usuários. Crie um middleware para validar essas permissões e adicione no teste4 e teste3.
-
+[nodemon]: https://img.shields.io/badge/-nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=black
+[nodemon-url]: https://nodemon.io/

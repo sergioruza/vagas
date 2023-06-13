@@ -18,8 +18,8 @@ $ npm install
 
 # Inicie o projeto
 $ npm run dev
-# [nodemon] starting `node .`
-# ouvindo porta 300?
+# [nodemon] starting `node server.js`
+# Express server listening on port 3000
 ```
 # CRUD
 

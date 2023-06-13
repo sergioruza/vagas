@@ -17,16 +17,16 @@ app.set('view engine', 'jade');
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.use(bodyParser.json());                        
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + '/public'));
 
 app.get("/user", checkNameQueryParam, teste1.getUser);
 app.get("/users", teste1.getUsers);
-app.post("/users", checkBody, teste2.createUser)
-app.delete("/users", verifyToken, checkNameQueryParam, teste3.deleteUser)
-app.put("/users", verifyToken, checkIdQueryParam, checkBody, teste4.updateUserById)
+app.post("/users", checkBody, teste2.createUser);
+app.delete("/users", verifyToken, checkNameQueryParam, teste3.deleteUser);
+app.put("/users", verifyToken, checkIdQueryParam, checkBody, teste4.updateUserById);
 app.get("/users/access", checkNameQueryParam, teste5.getUserAccessCount);
 
 module.exports = app;

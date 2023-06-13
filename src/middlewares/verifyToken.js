@@ -5,7 +5,9 @@ const { JWT_SECRET } = process.env;
 const verifyToken = (req, res, next) => {
   const token = req.headers.authorization;
 
-  if (!token) return res.status(401).json({ message: 'Token not found' });
+  if (!token) {
+    return res.status(401).json({ message: 'Token not found' });
+  }
 
   try {
     const payload = jwt.verify(token, JWT_SECRET);

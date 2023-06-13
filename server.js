@@ -1,4 +1,3 @@
-
 const app = require('./app');
 
 app.get('/', function (req, res) {
@@ -10,8 +9,7 @@ app.get('/', function (req, res) {
   `);
 });
 
-
-const port  = 3000;
-app.listen(port, function(){
+const port = 3000;
+app.listen(port, function() {
   console.log('Express server listening on port ' + port);
 });

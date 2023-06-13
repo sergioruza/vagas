@@ -15,7 +15,7 @@ const createUser = (req, res) => {
     data.push(newUser);
     writeFile('./fakeData.json', data);
   
-    return res.status(201).json(data);
+    return res.status(201).json(newUser);
   };
   
   module.exports = {
